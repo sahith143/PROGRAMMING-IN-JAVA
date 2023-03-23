@@ -1,0 +1,59 @@
+// Arjun asked to his friend to write a java program to accept a two-digit number.
+
+The Addition of the sum of its digits and the product of its digits.
+
+If the value is equal to the number input, then display the message "special two digit number" otherwise, display the message "not a special two digit number".
+
+If the value is not two digit number than display the message "invalid input"
+
+Sample 1: Line 1 : Enter two digit number: 25 Line 2 : Not a special two digit number
+
+Sample 2: Line 1 : Enter two digit number: 59 Line 2 : Special two digit number
+
+Sample 3: Line 1 : Enter two digit number: 5 Line 2 : Invalid input
+
+Input Format
+
+Enter two digit number
+
+Constraints
+
+9 < n < 100
+
+Output Format
+
+The Output String
+
+Sample Input 0
+
+Enter two digit number: 59
+Sample Output 0
+
+Special two digit number
+Sample Input 1
+
+Enter two digit number: 5
+Sample Output 1
+
+Invalid Input //
+
+//Code
+import java.util.Scanner;
+public class Solution {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    sc.next(); sc.next(); sc.next(); sc.next();
+    int n = sc.nextInt();
+    if (n >= 10 && n <= 99) {
+      int sum = n % 10 + n / 10;
+      int product = (n % 10) * (n / 10);
+      if (sum + product == n) {
+        System.out.println("Special two digit number");
+      } else {
+        System.out.println("Not a special two digit number");
+      }
+    } else {
+      System.out.println("Invalid Input");
+}
+}
+}
