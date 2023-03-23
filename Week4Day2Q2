@@ -1,0 +1,54 @@
+// Akash got a new coin game. In the coin game, Akash will only win the game if the total count is 56. Each coin will have value inscribed. Write a programming solution, to help Akash in counting total value of coins at the end of the game. Coin Game is played N times
+
+Note: Player will have exactly K coins at the end of the game.
+
+Input Format
+
+1st line contain N(integers) 2nd line contain space separated values from K coins
+
+Constraints
+
+N>0 & N<=5 K=7
+
+Output Format
+
+One integer – 1 in case of win, 0 in case of loss
+
+Sample Input 0
+
+2
+10 12 5 7 8 9 5
+5 7 6 9 6 3 4
+Sample Output 0
+
+1
+0 //
+
+//Code
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+       Scanner obj = new Scanner(System.in);
+        int n = obj.nextInt();
+        int k = 7;
+        for(int i=0;i<n;i++){
+            int total=0;
+        for(int j=0;j<k;j++){
+            int coin = obj.nextInt();
+            total +=coin;
+        }
+        if(total==56){
+            System.out.println(1);
+        }
+        else{
+            System.out.println(0);
+        }
+        }
+    }
+}
