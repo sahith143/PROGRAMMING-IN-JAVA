@@ -1,0 +1,79 @@
+// Accpet one array of stings with all alphabets or integers string and count the number of alphabets or integers string present in the array.
+
+Input Format
+
+First line accepts the size of the array(n) Second line accepts the n elements.
+
+Constraints
+
+The array is String type n>0 else "Invalid"
+
+Output Format
+
+First line print the number of Integer strings present Second line prints the number of Alphabet strings present
+
+Sample Input 0
+
+5
+Raj 77 101 99 Jio
+Sample Output 0
+
+3
+2
+Sample Input 1
+
+0
+Sample Output 1
+
+Invalid //
+
+//Code
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Accept the size of the array
+        int n = scanner.nextInt();
+
+        // Validate the input
+        if (n <= 0) {
+            System.out.println("Invalid");
+            return;
+        }
+
+        // Accept the array elements
+        String[] arr = new String[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = scanner.next();
+        }
+
+        // Initialize counters for integers and alphabets
+        int countIntegers = 0;
+        int countAlphabets = 0;
+
+        // Iterate through the array elements
+        for (String element : arr) {
+            if (isInteger(element)) {
+                countIntegers++;
+            } else {
+                countAlphabets++;
+            }
+        }
+
+        // Print the results
+        System.out.println(countIntegers);
+        System.out.println(countAlphabets);
+    }
+
+    // Method to check if a string is an integer
+    public static boolean isInteger(String s) {
+        try {
+            Integer.parseInt(s);
+            return true;
+        } catch (NumberFormatException ex) {
+            return false;
+        }
+    }
+}
