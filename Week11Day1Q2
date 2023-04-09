@@ -1,0 +1,71 @@
+Riya asked her friend to make calculator using nested class using the following operation. 1. The outer class name is Outer_Calculator 2. The inner class name is static Inner_Calculator with four method addition , subtraction , multiplication and division. 3. Write main method under the class of Outer_Calculator.
+
+if the input is integer than display the massage as "invalid input" and if the operator is not valid operator than display the massage as "invalid operator".
+
+Input Format
+
+Line 1: Read 1st Number Line 2: Read 2nd Number Line 3: Read Operator
+
+Constraints
+
+Number n1, n2 > 0 Operator : +, -, *, / (any one)
+
+Output Format
+
+Display the result
+
+Sample Input 0
+
+4
+5
++
+Sample Output 0
+
+9
+
+//Code
+import java.util.Scanner;
+
+public class Outer_Calculator {
+
+    public static class Inner_Calculator {
+        public static void addition(int a, int b) {
+            System.out.println(a + b);
+        }
+
+        public static void subtraction(int a, int b) {
+            System.out.println(a - b);
+        }
+
+        public static void multiplication(int a, int b) {
+            System.out.println(a * b);
+        }
+
+        public static void division(int a, int b) {
+            if (b == 0) {
+                System.out.println("Cannot divide by zero.");
+            } else {
+                System.out.println(a / b);
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n1 = sc.nextInt();
+        int n2 = sc.nextInt();
+        String operator = sc.next();
+
+        if (operator.equals("+")) {
+            Inner_Calculator.addition(n1, n2);
+        } else if (operator.equals("-")) {
+            Inner_Calculator.subtraction(n1, n2);
+        } else if (operator.equals("*")) {
+            Inner_Calculator.multiplication(n1, n2);
+        } else if (operator.equals("/")) {
+            Inner_Calculator.division(n1, n2);
+        } else {
+            System.out.println("invalid operator");
+        }
+    }
+}
